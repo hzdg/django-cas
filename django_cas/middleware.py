@@ -17,16 +17,13 @@ class CASMiddleware(object):
     def process_request(self, request):
         """Logs in the user if a ticket is append as parameter"""
 
-        ticket = request.REQUEST.get('ticket')
+        ticket = request.GET.get('ticket')
 
         if ticket:
             from django.contrib import auth
             user = auth.authenticate(ticket=ticket, service=_service_url(request))
             if user is not None:
                 auth.login(request, user)
-
-
-
 
     def process_view(self, request, view_func, view_args, view_kwargs):
         """Forwards unauthenticated requests to the admin page to the CAS
