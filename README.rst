@@ -1,3 +1,7 @@
+DEPRECATED: STOP USING THIS APP. USE THIS ONE INSTEAD BECAUSE IT'S ACTUALLY MAINTAINED:
+
+https://github.com/kstateome/django-cas
+
 Django CAS
 ===========
 
